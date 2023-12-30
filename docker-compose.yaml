@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+  mysql8:
+    image: mysql:8.2.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3306:3306'
+    networks:
+      - fili-net
+    volumes:
+      - fili-db:/var/lib/mysql-catalog-service
+      - ./01_catalog_service_create_schema.sql:/docker-entrypoint-initdb.d/01_catalog_service_create_schema.sql
+      - ./02_catalog_service_init_data.sql:/docker-entrypoint-initdb.d/02_catalog_service_init_data.sql
+  catalog-service:
+    build:
+      context: ./catalog-service
+      dockerfile: Dockerfile
+    image: catalog-service:1.0
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - fili-net
+    external_links:
+        - mysql8:mysql8
+    depends_on:
+      - mysql8
+
+volumes:
+  fili-db:
+    driver: local
+
+networks:
+  fili-net:
+    driver: bridge
