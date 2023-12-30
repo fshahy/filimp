@@ -12,8 +12,8 @@ services:
       - fili-net
     volumes:
       - fili-db:/var/lib/mysql-catalog-service
-      - ./01_catalog_service_create_schema.sql:/docker-entrypoint-initdb.d/01_catalog_service_create_schema.sql
-      - ./02_catalog_service_init_data.sql:/docker-entrypoint-initdb.d/02_catalog_service_init_data.sql
+      - ./catalog-service/db-scripts/01_create_schema.sql:/docker-entrypoint-initdb.d/01_create_schema.sql
+      - ./catalog-service/db-scripts/02_init_data.sql:/docker-entrypoint-initdb.d/02_init_data.sql
   catalog-service:
     build:
       context: ./catalog-service
