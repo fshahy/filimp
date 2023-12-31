@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <groupId>filimp-online-store</groupId>
-    <artifactId>catalog-service-filimp</artifactId>
+    <artifactId>xxx-service-filimp</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -104,6 +104,10 @@
         <dependency>
             <groupId>io.helidon.common</groupId>
             <artifactId>helidon-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>io.helidon.integrations.cdi</groupId>

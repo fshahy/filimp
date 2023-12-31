@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="catalog-pu" transaction-type="JTA"> 
+        <description>catalog service</description>
+        <jta-data-source>catalogds</jta-data-source>
+        <class>de.fshahy.filimp.catalog.models.ProductCategory</class> 
+        <class>de.fshahy.filimp.catalog.models.Product</class>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/> 
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <!-- <property name="jakarta.persistence.sql-load-script-source" value="META-INF/init_script.sql"/> -->
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -31,9 +31,9 @@ FROM container-registry.oracle.com/java/openjdk:21
 WORKDIR /helidon
 
 # Copy the binary built in the 1st stage
-COPY --from=build /helidon/target/catalog-service-filimp.jar ./
+COPY --from=build /helidon/target/xxx-service-filimp.jar ./
 COPY --from=build /helidon/target/libs ./libs
 
-CMD ["java", "-jar", "catalog-service-filimp.jar"]
+CMD ["java", "-jar", "xxx-service-filimp.jar"]
 
 EXPOSE 8080

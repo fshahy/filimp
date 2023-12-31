@@ -18,7 +18,7 @@ services:
     build:
       context: ./catalog-service
       dockerfile: Dockerfile
-    image: catalog-service:1.0
+    image: catalog-service-filimp:1.0
     restart: always
     ports:
       - "8080:8080"

@@ -3,17 +3,16 @@ apiVersion: skaffold/v4beta8
 kind: Config
 
 metadata:
-  name: fili-app
+  name: helidon-base-app
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.FILI_VERSION}}"
+      template: "{{.HBA_VERSION}}"
   artifacts:
-    - image: catalog-service
-      context: catalog-service
+    - image: helidon-base-app
       docker:
         dockerfile: Dockerfile
         noCache: true
 manifests:
   rawYaml:
-    - catalog-service/app.yaml
+    - app.yaml

@@ -1,4 +1,4 @@
-# catalog-service-filimp
+# xxx-service-filimp
 
 Helidon MP application that uses the dbclient API with MySQL database.
 
@@ -8,7 +8,7 @@ Helidon MP application that uses the dbclient API with MySQL database.
 With JDK21
 ```bash
 mvn package
-java -jar target/catalog-service-filimp.jar
+java -jar target/xxx-service-filimp.jar
 ```
 
 ## Exercise the application
@@ -126,13 +126,13 @@ docker run --rm --name mysql -p 3306:3306 \
 ## Building the Docker Image
 
 ```
-docker build -t catalog-service-filimp .
+docker build -t xxx-service-filimp .
 ```
 
 ## Running the Docker Image
 
 ```
-docker run --rm -p 8080:8080 catalog-service-filimp:latest
+docker run --rm -p 8080:8080 xxx-service-filimp:latest
 ```
 
 Exercise the application as described above.
@@ -152,9 +152,9 @@ kubectl get pods                            # Verify connectivity to cluster
 ### Deploy the application to Kubernetes
 
 ```
-kubectl create -f app.yaml                       # Deploy application
-kubectl get pods                                 # Wait for quickstart pod to be RUNNING
-kubectl get service  catalog-service-filimp      # Get service info
+kubectl create -f app.yaml                  # Deploy application
+kubectl get pods                            # Wait for quickstart pod to be RUNNING
+kubectl get service  xxx-service-filimp         # Get service info
 ```
 
 Note the PORTs. You can now exercise the application as you did before but use the second
