@@ -3,13 +3,13 @@ apiVersion: skaffold/v4beta8
 kind: Config
 
 metadata:
-  name: fili-app
+  name: filimp
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.FILI_VERSION}}"
+      template: "{{.FILIMP_VERSION}}"
   artifacts:
-    - image: catalog-service
+    - image: catalog-service-filimp
       context: catalog-service
       docker:
         dockerfile: Dockerfile

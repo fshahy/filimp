@@ -11,7 +11,7 @@ RUN set -x && \
     mv apache-maven-* maven && \
     ln -s /usr/share/maven/bin/mvn /bin/
 
-WORKDIR /helidon
+WORKDIR /app
 
 # Create a first layer to cache the "Maven World" in the local repository.
 # Incremental docker builds will always resume after that, unless you update
@@ -28,11 +28,11 @@ RUN echo "done!"
 
 # 2nd stage, build the runtime image
 FROM container-registry.oracle.com/java/openjdk:21
-WORKDIR /helidon
+WORKDIR /app
 
 # Copy the binary built in the 1st stage
-COPY --from=build /helidon/target/catalog-service-filimp.jar ./
-COPY --from=build /helidon/target/libs ./libs
+COPY --from=build /app/target/catalog-service-filimp.jar ./
+COPY --from=build /app/target/libs ./libs
 
 CMD ["java", "-jar", "catalog-service-filimp.jar"]
 
