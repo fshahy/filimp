@@ -2,7 +2,12 @@ package de.fshahy.filimp.catalog.resources;
 
 import java.util.List;
 
+import org.eclipse.microprofile.metrics.MetricUnits;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 import de.fshahy.filimp.catalog.models.Product;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.GET;
@@ -11,6 +16,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/catalog/products")
+// @RequestScoped
 public class ProductResource {
     
     @PersistenceContext(unitName = "catalog-pu")
@@ -18,6 +24,8 @@ public class ProductResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    // @Counted(name = "products", absolute = true)
+    // @Timed(name = "products", absolute = true, unit = MetricUnits.MILLISECONDS)
     public List<Product> getAll() {
         return entityManager
                 .createNamedQuery("Product.findAll", Product.class)
