@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.helidon.applications</groupId>
         <artifactId>helidon-mp</artifactId>
-        <version>4.0.2</version>
+        <version>4.0.3</version>
         <relativePath/>
     </parent>
     <groupId>filimp-online-store</groupId>
@@ -132,6 +132,18 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.microprofile.messaging</groupId>
+            <artifactId>helidon-microprofile-messaging</artifactId>
+         </dependency>
+         <dependency>
+            <groupId>io.helidon.microprofile.messaging</groupId>
+            <artifactId>helidon-microprofile-messaging-health</artifactId>
+         </dependency>
+         <dependency>
+            <groupId>io.helidon.messaging.kafka</groupId>
+            <artifactId>helidon-messaging-kafka</artifactId>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
