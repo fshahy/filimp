@@ -3,7 +3,7 @@ package de.fshahy.filimp.catalog.resources;
 import java.util.List;
 
 import de.fshahy.filimp.catalog.models.ProductCategory;
-
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.GET;
@@ -12,6 +12,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/catalog/product_categories")
+@RequestScoped
 public class ProductCategoryResource {
 
     @PersistenceContext(unitName = "catalog-pu")

@@ -1,7 +1,5 @@
 package de.fshahy.filimp.catalog.models;
 
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +11,6 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product_categories")
-@Access(AccessType.FIELD)
 @NamedQueries({
     @NamedQuery(name="ProductCategory.findAll", query = "SELECT pc FROM ProductCategory pc"),
 })
