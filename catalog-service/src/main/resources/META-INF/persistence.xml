@@ -12,7 +12,7 @@
         <class>de.fshahy.filimp.catalog.models.Product</class>
         <properties>
             <property name="hibernate.show_sql" value="true"/> 
-            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
             <!-- <property name="jakarta.persistence.sql-load-script-source" value="META-INF/init_script.sql"/> -->
         </properties>
     </persistence-unit>
